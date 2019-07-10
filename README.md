@@ -41,3 +41,44 @@ ensure you have installed:
  - run `git commit`
  - run `git push`
 
+## Notable packages
+### kubernetes
+The following tools help with local kubernetes development:
+```
+tap "datawire/blackbird"
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/core"
+cask "osxfuse"
+brew "kubernetes-cli"
+brew "kube-ps1"
+brew "kubectx"
+brew "kubernetes-helm"
+tap "azure/draft"
+brew "azure/draft/draft"
+tap "derailed/k9s"
+brew "derailed/k9s/k9s"
+tap "derailed/popeye"
+brew "derailed/popeye/popeye"
+cask "minikube"
+```
+#### minikube
+great for local kubernetes development - go straight to the help to get
+
+#### kubectx
+run the first time as `kubectx` to list all kube contexts you have.
+run the second time as `kubectx {chosen-context}` to switch to the chosen context
+
+#### k9s
+after verifying you are in the correct context with kubectx simply run `k9s` to interact with your cluster.
+pres `ctrl + a` to launch the alias list - and launch any the screens listed within
+type `:` in order to bring up the command pallette and switch between any of the screens in "Aliases" which you have memorized
+observe all other commands listed on the top of your screen
+
+### azure
+
+```
+tap "azure/draft"
+brew "azure-cli"
+brew "azure/draft/draft"
+```
