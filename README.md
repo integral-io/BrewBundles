@@ -18,7 +18,7 @@ ensure you have installed:
  - homebrew
 ### Clean setup
  - use git to clone this project
- - run `brew bundle`
+ - run `brew bundle -force`
  - run `./copyout.sh`
 ### Merging an existing setup
  - use git to clone this project
