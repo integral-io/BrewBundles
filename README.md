@@ -19,7 +19,7 @@ ensure you have installed:
 ### Clean setup
  - use git to clone this project
  - run `brew bundle -force`
- - run `./copyout.sh`
+ - run `./copy.sh out`
 ### Merging an existing setup
  - use git to clone this project
  - decide how you want to manage your bundles
@@ -35,9 +35,9 @@ ensure you have installed:
     - keep packages you want from yours
     - remove packages you don't want from theirs
  - run `brew bundle`
- - if you want the configurations in this package run `./copyout.sh`
+ - if you want the configurations in this package run `./copy.sh out`
  - if you want to add your own configurations ~ copy them into `/config`
-    - if you want to update these files contents in the future run `./copyin.sh`
+    - if you want to update these files contents in the future run `./copy.sh in`
  - run `git commit`
  - run `git push`
 

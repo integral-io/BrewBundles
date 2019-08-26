@@ -111,6 +111,11 @@ plugins=(
   rbenv
   ruby
 )
+
+POWERLEVEL9K_MODE='nerdfont-complete'
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(kubecontext time battery)
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+
 # export PS1="$ "
 alias kc=kubectl
 alias zedit=code ~/.zshrc
@@ -126,5 +131,12 @@ gppf() {
 export TERM=xterm-256color
 
 alias k9bosch=k9s --context aks-lsm-dev
+function thelm {
+  echo "$(helm $@ --tls)"
+}
+alias kdemo=/Users/andrewnowak/code/kubernetes/infrastructure/umbrella/helm-setup.sh
+alias agenda=/Users/andrewnowak/code/kubernetes/demo.sh
 source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
-PS1='$(kube_ps1)'$PS1
+# PS1='$(kube_ps1)'$PS1
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon ssh dir vcs status)
+source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
