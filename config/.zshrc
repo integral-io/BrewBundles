@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/andrewnowak/.oh-my-zsh"
+export ZSH="/Users/integerAndrew/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -134,9 +134,12 @@ alias k9bosch=k9s --context aks-lsm-dev
 function thelm {
   echo "$(helm $@ --tls)"
 }
-alias kdemo=/Users/andrewnowak/code/kubernetes/infrastructure/umbrella/helm-setup.sh
-alias agenda=/Users/andrewnowak/code/kubernetes/demo.sh
+alias kdemo=~/code/kubernetes/infrastructure/umbrella/helm-setup.sh
+alias agenda=~/code/kubernetes/demo.sh
 source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
 # PS1='$(kube_ps1)'$PS1
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon ssh dir vcs status)
 source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
+
+eval $(thefuck --alias)
+export PATH="/usr/local/opt/curl/bin:$PATH"

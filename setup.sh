@@ -34,22 +34,23 @@ function setupFirstTime() {
   setShell
   installDependencies
   gitBundles $1
-  cd ~/.brew/
-  brew bundle install
+  setupAgain
 }
 
 function setupAgain() {
   cd ~/.brew/
+  ./copy.sh out
   brew bundle install
 }
 
 function gitSave() {
   cd ~/.brew/
-  brew bundle dump -force
-  ./copy.sh copyin
   git checkout -b $1
-  git commit -m "force update"
-  git push origin $1
+  git add .
+  git commit -m "auto update"
+  git push origin --delete $1
+  git branch --set-upstream-to=origin/$1 $1
+  git push
 }
 
 function compress() {
@@ -61,14 +62,10 @@ function extract() {
 }
 
 function save() {
-  cd ~/.brew/
   brew bundle dump -force
-  git checkout -b $1
-  git add .
-  git commit -m "auto update"
-  git push origin --delete $1
-  git branch --set-upstream-to=origin/$1 $1
-  git push
+  cd ~/.brew/
+  ./copy.sh in
+  gitSave $1
 }
 
 $@
