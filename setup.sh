@@ -65,7 +65,7 @@ function save() {
   brew bundle dump -force
   git checkout -b $1
   git add .
-  git commit -m "force update"
+  git commit -m "auto update"
   git push origin --delete $1
   git branch --set-upstream-to=origin/$1 $1
   git push
